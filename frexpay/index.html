@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrexPay - Modern Bankacılık Çözümü</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="assets/images/logo.svg" alt="FrexPay Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Özellikler</a></li>
+                    <li><a href="#pricing">Fiyatlandırma</a></li>
+                    <li><a href="#about">Hakkımızda</a></li>
+                    <li><a href="#support">Destek</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="btn btn-secondary" id="loginBtn">Giriş Yap</button>
+                    <button class="btn btn-primary" id="registerBtn">Kayıt Ol</button>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bankacılığın Geleceği FrexPay ile Şimdi Başlıyor</h1>
+                <p>Hızlı, güvenli ve modern bankacılık deneyimi için doğru adrestesiniz. FrexPay ile finansal özgürlüğünüzü keşfedin.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-lg">Hemen Başla</button>
+                    <button class="btn btn-outline btn-lg">Daha Fazla Bilgi</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>1M+</h3>
+                        <p>Aktif Kullanıcı</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>150+</h3>
+                        <p>Ülke</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9/5</h3>
+                        <p>Kullanıcı Puanı</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero-bg.jpg" alt="FrexPay Banking">
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Neden FrexPay?</h2>
+                <p>Modern bankacılık deneyimini yeniden tanımlıyoruz</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Güvenli İşlemler</h3>
+                    <p>End-to-end şifreleme ve çok faktörlü kimlik doğrulama ile paranız her zaman güvende.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Anında Transferler</h3>
+                    <p>7/24 anında para transferi yapın, beklemek artık geçmişte kaldı.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Finansal Analiz</h3>
+                    <p>Harcamalarınızı takip edin, bütçenizi planlayın ve finansal hedeflerinize ulaşın.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Erişim</h3>
+                    <p>150'den fazla ülkede, döviz kuru olmadan para transferi yapın.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Sanal Kartlar</h3>
+                    <p>Anında sanal kart oluşturun, online alışverişlerinizi güvenle yapın.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>7/24 Destek</h3>
+                    <p>Uzman destek ekibimiz her zaman yanınızda, sorularınıza anında cevap alın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-showcase">
+        <div class="container">
+            <div class="app-content">
+                <h2>FrexPay Mobil Uygulaması</h2>
+                <p>Bankacılık işlemlerinizi dilediğiniz yerden, dilediğiniz zaman yapın. FrexPay mobil uygulaması ile tüm finansal işlemleriniz parmaklarınızın ucunda.</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn">
+                        <i class="fab fa-apple"></i>
+                        <span>App Store</span>
+                    </a>
+                    <a href="#" class="app-btn">
+                        <i class="fab fa-google-play"></i>
+                        <span>Google Play</span>
+                    </a>
+                </div>
+                <div class="app-features">
+                    <div class="app-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Biyometrik Giriş</span>
+                    </div>
+                    <div class="app-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Anlık Bildirimler</span>
+                    </div>
+                    <div class="app-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>QR Kod ile Ödeme</span>
+                    </div>
+                </div>
+            </div>
+            <div class="app-image">
+                <img src="assets/images/app-showcase.png" alt="FrexPay Mobile App">
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Fiyatlandırma Planları</h2>
+                <p>İhtiyaçlarınıza uygun planı seçin</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Başlangıç</h3>
+                        <div class="price">
+                            <span class="currency">₺</span>
+                            <span class="amount">0</span>
+                            <span class="period">/ay</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Temel hesap özellikleri</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Aylık 5 ücretsiz transfer</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Standart sanal kart</span>
+                        </div>
+                        <div class="feature disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Yurtdışı işlemler</span>
+                        </div>
+                        <div class="feature disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Premium destek</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-block">Seç</button>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Popüler</div>
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="price">
+                            <span class="currency">₺</span>
+                            <span class="amount">29.99</span>
+                            <span class="period">/ay</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Tüm başlangıç özellikleri</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Sınırsız ücretsiz transfer</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Premium sanal kartlar</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Yurtdışı işlemler</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>7/24 öncelikli destek</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block">Seç</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>İşletme</h3>
+                        <div class="price">
+                            <span class="currency">₺</span>
+                            <span class="amount">99.99</span>
+                            <span class="period">/ay</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Tüm premium özellikleri</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Çoklu kullanıcı yönetimi</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>API entegrasyonu</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Özel raporlama araçları</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Özel müşteri temsilcisi</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline btn-block">Seç</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Müşterilerimiz Ne Diyor?</h2>
+                <p>Binlerce mutlu kullanıcımızdan bazıları</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"FrexPay ile tanıştıktan sonra bankacılık işlemlerim inanılmaz kolaylaştı. Artık şubeye gitmek zorunda kalmıyorum ve tüm işlemlerimi saniyeler içinde halledebiliyorum."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/images/testimonials/user1.jpg" alt="Ahmet Yılmaz">
+                        <div class="author-info">
+                            <h4>Ahmet Yılmaz</h4>
+                            <p>Yazılım Geliştirici</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Yurtdışı seyahatlerimde FrexPay'in sunduğu döviz kuru avantajları sayesinde ciddi tasarruf sağlıyorum. Ayrıca sanal kartlar online alışverişlerimde ekstra güvenlik sağlıyor."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/images/testimonials/user2.jpg" alt="Ayşe Demir">
+                        <div class="author-info">
+                            <h4>Ayşe Demir</h4>
+                            <p>Seyahat Bloggerı</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Küçük işletme sahibi olarak, FrexPay'in işletme hesabı özelliklerini kullanmak finansal yönetimimizi tamamen değiştirdi. Özellikle çoklu kullanıcı yönetimi ve detaylı raporlama araçları muhteşem."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="assets/images/testimonials/user3.jpg" alt="Mehmet Kaya">
+                        <div class="author-info">
+                            <h4>Mehmet Kaya</h4>
+                            <p>Cafe Sahibi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Finansal Özgürlüğünüze İlk Adımı Atın</h2>
+                <p>Hemen ücretsiz hesabınızı oluşturun ve FrexPay'in sunduğu avantajlardan yararlanmaya başlayın.</p>
+                <button class="btn btn-light btn-lg">Hemen Başla</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sıkça Sorulan Sorular</h2>
+                <p>Merak ettiğiniz soruların cevapları</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>FrexPay hesabı açmak için neler gerekiyor?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>FrexPay hesabı açmak için 18 yaşından büyük olmanız, geçerli bir kimlik belgeniz ve e-posta adresiniz olması yeterlidir. Hesap açma işlemi tamamen online olarak gerçekleştirilir ve sadece birkaç dakika sürer.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Para transferleri ne kadar sürede gerçekleşir?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>FrexPay kullanıcıları arasındaki transferler anında gerçekleşir. Diğer bankalara yapılan transferler ise genellikle aynı gün içinde, en geç 24 saat içinde tamamlanır.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>FrexPay güvenli mi?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, FrexPay en yüksek güvenlik standartlarına sahiptir. End-to-end şifreleme, çok faktörlü kimlik doğrulama ve gelişmiş dolandırıcılık önleme sistemleri kullanıyoruz. Ayrıca, tüm hesaplar devlet güvencesi altındadır.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Yurtdışında FrexPay kullanabilir miyim?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, FrexPay 150'den fazla ülkede kullanılabilir. Premium ve İşletme planlarımızda yurtdışı işlemler için ek avantajlar sunuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.svg" alt="FrexPay Logo">
+                    <p>Modern bankacılığın öncüsü</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Ürün</h3>
+                        <ul>
+                            <li><a href="#">Özellikler</a></li>
+                            <li><a href="#">Fiyatlandırma</a></li>
+                            <li><a href="#">Güvenlik</a></li>
+                            <li><a href="#">Mobil Uygulama</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Şirket</h3>
+                        <ul>
+                            <li><a href="#">Hakkımızda</a></li>
+                            <li><a href="#">Kariyer</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Basın</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Destek</h3>
+                        <ul>
+                            <li><a href="#">Yardım Merkezi</a></li>
+                            <li><a href="#">İletişim</a></li>
+                            <li><a href="#">Topluluk</a></li>
+                            <li><a href="#">Durum</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Yasal</h3>
+                        <ul>
+                            <li><a href="#">Gizlilik Politikası</a></li>
+                            <li><a href="#">Kullanım Şartları</a></li>
+                            <li><a href="#">Çerez Politikası</a></li>
+                            <li><a href="#">KVKK</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 FrexPay. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Giriş Yap</button>
+                <button class="auth-tab" data-tab="register">Kayıt Ol</button>
+            </div>
+            <div class="auth-content">
+                <div class="auth-form login-form active">
+                    <h2>FrexPay'e Hoş Geldiniz</h2>
+                    <p>Hesabınıza giriş yapın</p>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">E-posta</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Şifre</label>
+                            <input type="password" id="loginPassword" required>
+                            <a href="#" class="forgot-password">Şifremi Unuttum</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
+                    </form>
+                    <div class="divider">
+                        <span>veya</span>
+                    </div>
+                    <div id="g_id_onload"
+                         data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                         data-callback="handleCredentialResponse">
+                    </div>
+                    <div class="g_id_signin" data-type="standard"></div>
+                </div>
+                <div class="auth-form register-form">
+                    <h2>FrexPay Ailesine Katılın</h2>
+                    <p>Ücretsiz hesabınızı oluşturun</p>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="registerName">Ad Soyad</label>
+                            <input type="text" id="registerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">E-posta</label>
+                            <input type="email" id="registerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Şifre</label>
+                            <input type="password" id="registerPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPasswordConfirm">Şifre Tekrar</label>
+                            <input type="password" id="registerPasswordConfirm" required>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="termsCheck" required>
+                            <label for="termsCheck">Kullanım şartlarını ve gizlilik politikasını kabul ediyorum</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Kayıt Ol</button>
+                    </form>
+                    <div class="divider">
+                        <span>veya</span>
+                    </div>
+                    <div id="g_id_onload"
+                         data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                         data-callback="handleCredentialResponse">
+                    </div>
+                    <div class="g_id_signin" data-type="standard"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

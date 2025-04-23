@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşlemler - FrexPay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/transactions.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Sidebar içeriği dashboard.html ile aynı -->
+            <div class="sidebar-header">
+                <img src="assets/images/logo.svg" alt="FrexPay Logo" class="sidebar-logo">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    <img src="assets/images/avatar.jpg" alt="User Avatar">
+                    <span class="status-indicator online"></span>
+                </div>
+                <div class="user-info">
+                    <h4>Merhaba, Ahmet</h4>
+                    <p>Premium Üye</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i>
+                            <span>Ana Sayfa</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="transactions.html">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>İşlemler</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cards.html">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Kartlarım</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="has-submenu">
+                            <i class="fas fa-wallet"></i>
+                            <span>Hesaplarım</span>
+                            <i class="fas fa-chevron-down submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">TL Hesabı</a></li>
+                            <li><a href="#">USD Hesabı</a></li>
+                            <li><a href="#">EUR Hesabı</a></li>
+                            <li><a href="#">Yeni Hesap Aç</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Ödemeler</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Bütçe Analizi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-gift"></i>
+                            <span>Kampanyalar</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Ayarlar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="support.html">
+                            <i class="fas fa-headset"></i>
+                            <span>Destek</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn btn-outline btn-sm">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Çıkış Yap</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <!-- Header içeriği dashboard.html ile aynı -->
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="İşlem, kart veya hesap ara...">
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-light btn-sm">
+                        <i class="fas fa-plus"></i>
+                        <span>Yeni İşlem</span>
+                    </button>
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </button>
+                        <!-- Notification dropdown içeriği dashboard.html ile aynı -->
+                    </div>
+                    <div class="language-selector">
+                        <button class="language-btn">
+                            <img src="assets/images/flags/tr.svg" alt="Türkçe">
+                            <span>TR</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <!-- Language dropdown içeriği dashboard.html ile aynı -->
+                    </div>
+                </div>
+            </header>
+
+            <!-- Transactions Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>İşlemler</h1>
+                    <div class="page-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-file-export"></i>
+                            <span>Dışa Aktar</span>
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            <span>Yeni İşlem</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Transactions Filters -->
+                <div class="transactions-filters">
+                    <div class="filter-group">
+                        <label>Tarih Aralığı</label>
+                        <div class="date-range-picker">
+                            <input type="date" class="form-control" value="2023-05-01">
+                            <span>-</span>
+                            <input type="date" class="form-control" value="2023-05-31">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>İşlem Tipi</label>
+                        <select class="form-select">
+                            <option value="all">Tümü</option>
+                            <option value="income">Gelir</option>
+                            <option value="expense">Gider</option>
+                            <option value="transfer">Transfer</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Kategori</label>
+                        <select class="form-select">
+                            <option value="all">Tümü</option>
+                            <option value="shopping">Alışveriş</option>
+                            <option value="food">Yiyecek & İçecek</option>
+                            <option value="entertainment">Eğlence</option>
+                            <option value="bills">Faturalar</option>
+                            <option value="transport">Ulaşım</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Durum</label>
+                        <select class="form-select">
+                            <option value="all">Tümü</option>
+                            <option value="completed">Tamamlandı</option>
+                            <option value="pending">Beklemede</option>
+                            <option value="failed">Başarısız</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="btn btn-light">Filtreleri Temizle</button>
+                        <button class="btn btn-primary">Uygula</button>
+                    </div>
+                </div>
+
+                <!-- Transactions Summary -->
+                <div class="transactions-summary">
+                    <div class="summary-card">
+                        <div class="summary-icon income">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="summary-details">
+                            <h3>Toplam Gelir</h3>
+                            <p class="summary-amount">₺12,450.75</p>
+                            <span class="summary-change positive">
+                                <i class="fas fa-caret-up"></i> %8.5
+                            </span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon expense">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="summary-details">
+                            <h3>Toplam Gider</h3>
+                            <p class="summary-amount">₺8,320.25</p>
+                            <span class="summary-change negative">
+                                <i class="fas fa-caret-up"></i> %12.3
+                            </span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon balance">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="summary-details">
+                            <h3>Net Bakiye</h3>
+                            <p class="summary-amount">₺4,130.50</p>
+                            <span class="summary-change positive">
+                                <i class="fas fa-caret-up"></i> %3.2
+                            </span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon transactions">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="summary-details">
+                            <h3>Toplam İşlem</h3>
+                            <p class="summary-amount">42</p>
+                            <span class="summary-period">Bu ay</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transactions Chart -->
+                <div class="transactions-chart-section">
+                    <div class="section-header">
+                        <h3>İşlem Analizi</h3>
+                        <div class="section-actions">
+                            <div class="chart-toggle">
+                                <button class="chart-toggle-btn active" data-chart="bar">
+                                    <i class="fas fa-chart-bar"></i>
+                                </button>
+                                <button class="chart-toggle-btn" data-chart="line">
+                                    <i class="fas fa-chart-line"></i>
+                                </button>
+                            </div>
+                            <select class="form-select">
+                                <option>Son 7 Gün</option>
+                                <option selected>Son 30 Gün</option>
+                                <option>Son 90 Gün</option>
+                                <option>Bu Yıl</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="transactionsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Transactions Table -->
+                <div class="transactions-table-section">
+                    <div class="section-header">
+                        <h3>İşlem Listesi</h3>
+                        <div class="section-actions">
+                            <div class="search-mini">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="İşlem ara...">
+                            </div>
+                            <select class="form-select">
+                                <option>10 Kayıt</option>
+                                <option selected>25 Kayıt</option>
+                                <option>50 Kayıt</option>
+                                <option>100 Kayıt</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="transactions-table-container">
+                        <table class="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Tarih</span>
+                                            <i class="fas fa-sort-down"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>İşlem No</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Açıklama</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Kategori</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Ödeme Yöntemi</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Tutar</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Durum</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">31 May 2023</span>
+                                            <span class="time">15:45</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-id">
+                                            <span>#TRX-8765432</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Maaş Ödemesi</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge income">Gelir</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-method">
+                                            <span class="method-badge bank">Banka Transferi</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount incoming">
+                                            +₺8,500.00
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-actions">
+                                            <button class="action-btn" title="Detaylar">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" title="İndir">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">30 May 2023</span>
+                                            <span class="time">12:30</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-id">
+                                            <span>#TRX-8765431</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>MediaMarkt</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge electronics">Elektronik</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-method">
+                                            <span class="method-badge card">Visa *5678</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺2,499.99
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-actions">
+                                            <button class="action-btn" title="Detaylar">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" title="İndir">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">28 May 2023</span>
+                                            <span class="time">18:15</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-id">
+                                            <span>#TRX-8765430</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Elektrik Faturası</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge bills">Faturalar</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-method">
+                                            <span class="method-badge auto">Otomatik Ödeme</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺245.75
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-actions">
+                                            <button class="action-btn" title="Detaylar">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" title="İndir">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">27 May 2023</span>
+                                            <span class="time">09:45</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-id">
+                                            <span>#TRX-8765429</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Migros</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge shopping">Alışveriş</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-method">
+                                            <span class="method-badge card">Mastercard *9012</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺345.50
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-actions">
+                                            <button class="action-btn" title="Detaylar">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" title="İndir">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">26 May 2023</span>
+                                            <span class="time">20:30</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-id">
+                                            <span>#TRX-8765428</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Netflix</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge entertainment">Eğlence</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-method">
+                                            <span class="method-badge card">Sanal Kart *1234</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺69.90
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-actions">
+                                            <button class="action-btn" title="Detaylar">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" title="İndir">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">25 May 2023</span>
+                                            <span class="time">14:30</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-id">
+                                            <span>#TRX-8765427</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Teknosa</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge electronics">Elektronik</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-method">
+                                            <span class="method-badge card">Visa *5678</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺1,250.00
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-actions">
+                                            <button class="action-btn" title="Detaylar">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" title="İndir">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">24 May 2023</span>
+                                            <span class="time">12:15</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-id">
+                                            <span>#TRX-8765426</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Migros</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge shopping">Alışveriş</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-method">
+                                            <span class="method-badge card">Mastercard *9012</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺345.75
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-actions">
+                                            <button class="action-btn" title="Detaylar">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" title="İndir">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">23 May 2023</span>
+                                            <span class="time">20:45</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-id">
+                                            <span>#TRX-8765425</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Cinemaximum</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge entertainment">Eğlence</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-method">
+                                            <span class="method-badge card">Visa *5678</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺120.00
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-actions">
+                                            <button class="action-btn" title="Detaylar">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" title="İndir">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">22 May 2023</span>
+                                            <span class="time">13:20</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-id">
+                                            <span>#TRX-8765424</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Spotify</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge entertainment">Eğlence</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-method">
+                                            <span class="method-badge card">Sanal Kart *1234</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺29.99
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-actions">
+                                            <button class="action-btn" title="Detaylar">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" title="İndir">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">21 May 2023</span>
+                                            <span class="time">09:30</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-id">
+                                            <span>#TRX-8765423</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Starbucks</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge food">Yiyecek</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-method">
+                                            <span class="method-badge card">Mastercard *9012</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺45.00
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-actions">
+                                            <button class="action-btn" title="Detaylar">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="action-btn" title="İndir">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-pagination">
+                        <div class="pagination-info">
+                            <span>1-10 / 42 kayıt gösteriliyor</span>
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="pagination-btn" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn">4</button>
+                            <button class="pagination-btn">5</button>
+                            <button class="pagination-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Analysis -->
+                <div class="category-analysis-section">
+                    <div class="section-header">
+                        <h3>Kategori Analizi</h3>
+                        <div class="section-actions">
+                            <select class="form-select">
+                                <option>Son 7 Gün</option>
+                                <option selected>Son 30 Gün</option>
+                                <option>Son 90 Gün</option>
+                                <option>Bu Yıl</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="category-analysis-content">
+                        <div class="category-chart">
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                        <div class="category-stats">
+                            <div class="category-stat-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #6C5CE7;"></div>
+                                    <div class="category-name">Alışveriş</div>
+                                </div>
+                                <div class="category-amount">₺3,250.50</div>
+                                <div class="category-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 39%;"></div>
+                                    </div>
+                                    <span class="progress-text">39%</span>
+                                </div>
+                            </div>
+                            <div class="category-stat-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #00B894;"></div>
+                                    <div class="category-name">Elektronik</div>
+                                </div>
+                                <div class="category-amount">₺2,499.99</div>
+                                <div class="category-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 30%;"></div>
+                                    </div>
+                                    <span class="progress-text">30%</span>
+                                </div>
+                            </div>
+                            <div class="category-stat-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #FD79A8;"></div>
+                                    <div class="category-name">Faturalar</div>
+                                </div>
+                                <div class="category-amount">₺1,245.75</div>
+                                <div class="category-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 15%;"></div>
+                                    </div>
+                                    <span class="progress-text">15%</span>
+                                </div>
+                            </div>
+                            <div class="category-stat-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #FDCB6E;"></div>
+                                    <div class="category-name">Eğlence</div>
+                                </div>
+                                <div class="category-amount">₺845.00</div>
+                                <div class="category-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 10%;"></div>
+                                    </div>
+                                    <span class="progress-text">10%</span>
+                                </div>
+                            </div>
+                            <div class="category-stat-item">
+                                <div class="category-info">
+                                    <div class="category-color" style="background-color: #74B9FF;"></div>
+                                    <div class="category-name">Yiyecek</div>
+                                </div>
+                                <div class="category-amount">₺479.00</div>
+                                <div class="category-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 6%;"></div>
+                                    </div>
+                                    <span class="progress-text">6%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Footer -->
+            <footer class="dashboard-footer">
+                <div class="footer-links">
+                    <a href="#">Hakkımızda</a>
+                    <a href="#">Gizlilik Politikası</a>
+                    <a href="#">Kullanım Koşulları</a>
+                    <a href="#">Yardım Merkezi</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2023 FrexPay. Tüm hakları saklıdır.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Transaction Detail Modal -->
+    <div class="modal" id="transactionDetailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>İşlem Detayı</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="transaction-detail-header">
+                    <div class="transaction-detail-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="transaction-detail-info">
+                        <h4>Migros</h4>
+                        <span class="transaction-detail-date">27 May 2023, 09:45</span>
+                    </div>
+                    <div class="transaction-detail-amount outgoing">
+                        -₺345.50
+                    </div>
+                </div>
+                <div class="transaction-detail-content">
+                    <div class="detail-group">
+                        <div class="detail-label">İşlem No</div>
+                        <div class="detail-value">#TRX-8765429</div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Kategori</div>
+                        <div class="detail-value">
+                            <span class="category-badge shopping">Alışveriş</span>
+                        </div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Ödeme Yöntemi</div>
+                        <div class="detail-value">
+                            <span class="method-badge card">Mastercard *9012</span>
+                        </div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Durum</div>
+                        <div class="detail-value">
+                            <span class="status-badge completed">Tamamlandı</span>
+                        </div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Açıklama</div>
+                        <div class="detail-value">Migros Ataşehir Şubesi</div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Referans No</div>
+                        <div class="detail-value">REF123456789</div>
+                    </div>
+                </div>
+                <div class="transaction-detail-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-download"></i>
+                        <span>Makbuz İndir</span>
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Paylaş</span>
+                    </button>
+                    <button class="btn btn-outline danger">
+                        <i class="fas fa-flag"></i>
+                        <span>Sorun Bildir</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/transactions.js"></script>
+    <script>
+        // İşlem Grafiği
+        document.addEventListener('DOMContentLoaded', function() {
+            // İşlem Grafiği
+            const transactionsCtx = document.getElementById('transactionsChart').getContext('2d');
+            const transactionsChart = new Chart(transactionsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['1 May', '5 May', '10 May', '15 May', '20 May', '25 May', '30 May'],
+                    datasets: [
+                        {
+                            label: 'Gelir',
+                            data: [1200, 1900, 800, 1500, 2000, 1300, 8500],
+                            backgroundColor: 'rgba(0, 184, 148, 0.5)',
+                            borderColor: '#00B894',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Gider',
+                            data: [900, 1200, 1800, 1300, 1100, 1700, 1500],
+                            backgroundColor: 'rgba(235, 59, 90, 0.5)',
+                            borderColor: '#EB3B5A',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                boxWidth: 12,
+                                padding: 20
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Kategori Grafiği
+            const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+            const categoryChart = new Chart(categoryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Alışveriş', 'Elektronik', 'Faturalar', 'Eğlence', 'Yiyecek'],
+                    datasets: [{
+                        data: [39, 30, 15, 10, 6],
+                        backgroundColor: [
+                            '#6C5CE7',
+                            '#00B894',
+                            '#FD79A8',
+                            '#FDCB6E',
+                            '#74B9FF'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                boxWidth: 12,
+                                padding: 20
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+
+            // Grafik Tipi Değiştirme
+            document.querySelectorAll('.chart-toggle-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const chartType = this.getAttribute('data-chart');
+                    
+                    // Aktif buton sınıfını değiştir
+                    document.querySelectorAll('.chart-toggle-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Grafik tipini değiştir
+                    if (chartType === 'bar') {
+                        transactionsChart.config.type = 'bar';
+                    } else if (chartType === 'line') {
+                        transactionsChart.config.type = 'line';
+                    }
+                    
+                    transactionsChart.update();
+                });
+            });
+
+            // Sidebar Toggle
+            document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+                document.querySelector('.sidebar').classList.toggle('collapsed');
+                document.querySelector('.dashboard-main').classList.toggle('expanded');
+            });
+
+            // Submenu Toggle
+            document.querySelectorAll('.has-submenu').forEach(item => {
+                item.addEventListener('click', event => {
+                    event.preventDefault();
+                    item.classList.toggle('active');
+                    const submenu = item.nextElementSibling;
+                    if (submenu && submenu.classList.contains('submenu')) {
+                        if (submenu.style.maxHeight) {
+                            submenu.style.maxHeight = null;
+                        } else {
+                            submenu.style.maxHeight = submenu.scrollHeight + "px";
+                        }
+                    }
+                });
+            });
+
+            // Bildirim Dropdown Açma/Kapama
+            document.querySelector('.notification-btn').addEventListener('click', function() {
+                document.querySelector('.notification-dropdown').classList.toggle('show');
+            });
+
+            // Dil Seçimi Dropdown Açma/Kapama
+            document.querySelector('.language-btn').addEventListener('click', function() {
+                document.querySelector('.language-dropdown').classList.toggle('show');
+            });
+
+            // Döküman dışı tıklamalarda dropdown'ları kapat
+            document.addEventListener('click', function(event) {
+                const notificationDropdown = document.querySelector('.notification-dropdown');
+                const notificationBtn = document.querySelector('.notification-btn');
+                const languageDropdown = document.querySelector('.language-dropdown');
+                const languageBtn = document.querySelector('.language-btn');
+
+                if (!notificationBtn.contains(event.target) && !notificationDropdown.contains(event.target)) {
+                    notificationDropdown.classList.remove('show');
+                }
+
+                if (!languageBtn.contains(event.target) && !languageDropdown.contains(event.target)) {
+                    languageDropdown.classList.remove('show');
+                }
+            });
+
+            // İşlem Detayı Modalı
+            const modal = document.getElementById('transactionDetailModal');
+            const detailButtons = document.querySelectorAll('.action-btn');
+            const closeButton = document.querySelector('.modal-close');
+
+            detailButtons.forEach(button => {
+                if (button.querySelector('i.fa-eye')) {
+                    button.addEventListener('click', function() {
+                        modal.style.display = 'flex';
+                        setTimeout(() => {
+                            modal.classList.add('show');
+                        }, 10);
+                    });
+                }
+            });
+
+            closeButton.addEventListener('click', function() {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.classList.remove('show');
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            // Tablo Sıralama
+            document.querySelectorAll('.th-content').forEach(header => {
+                header.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    
+                    // Tüm sıralama ikonlarını sıfırla
+                    document.querySelectorAll('.th-content i').forEach(i => {
+                        i.className = 'fas fa-sort';
+                    });
+                    
+                    // Tıklanan başlığın sıralama ikonunu güncelle
+                    if (icon.classList.contains('fa-sort')) {
+                        icon.className = 'fas fa-sort-up';
+                    } else if (icon.classList.contains('fa-sort-up')) {
+                        icon.className = 'fas fa-sort-down';
+                    } else {
+                        icon.className = 'fas fa-sort-up';
+                    }
+                    
+                    // Burada gerçek sıralama işlemi yapılacak
+                    // Örnek olarak sadece ikon değişimi gösterildi
+                });
+            });
+
+            // Sayfalama
+            document.querySelectorAll('.pagination-btn').forEach(button => {
+                if (!button.disabled && !button.classList.contains('active')) {
+                    button.addEventListener('click', function() {
+                        document.querySelectorAll('.pagination-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Burada gerçek sayfalama işlemi yapılacak
+                        // Örnek olarak sadece aktif sayfa değişimi gösterildi
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+                    

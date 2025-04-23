@@ -1,0 +1,5 @@
+<svg width="180" height="50" viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 10H40C45.5228 10 50 14.4772 50 20V30C50 35.5228 45.5228 40 40 40H20C14.4772 40 10 35.5228 10 30V20C10 14.4772 14.4772 10 20 10Z" fill="#6C5CE7"/>
+  <path d="M15 25C15 22.2386 17.2386 20 20 20H40C42.7614 20 45 22.2386 45 25C45 27.7614 42.7614 30 40 30H20C17.2386 30 15 27.7614 15 25Z" fill="#FFFFFF"/>
+  <text x="60" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#2D3436">FrexPay</text>
+</svg>

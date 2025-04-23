@@ -1,0 +1,366 @@
+/* Cards Page Styles */
+
+/* Cards Tabs */
+.cards-tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Cards Summary */
+.cards-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--card-shadow);
+}
+
+.summary-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.summary-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.summary-details h3 {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.summary-amount {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.summary-period {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    display: none;
+}
+
+.cards-grid.active {
+    display: grid;
+}
+
+.card-grid-item {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.credit-card {
+    height: 200px;
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    background: linear-gradient(135deg, #6C5CE7, #a29bfe);
+    overflow: hidden;
+}
+
+.credit-card.premium {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.credit-card.standard {
+    background: linear-gradient(135deg, #00B894, #55efc4);
+}
+
+.credit-card.virtual {
+    background: linear-gradient(135deg, #FD79A8, #fab1a0);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-logo img {
+    height: 30px;
+}
+
+.card-type img {
+    height: 24px;
+}
+
+.card-number {
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-holder, .card-expires {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-holder .label, .card-expires .label {
+    font-size: 0.625rem;
+    opacity: 0.8;
+    margin-bottom: 0.25rem;
+}
+
+.card-holder .value, .card-expires .value {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.virtual-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.625rem;
+    font-weight: 600;
+}
+
+.card-details {
+    padding: 1.5rem;
+}
+
+.card-details h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.card-info {
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.info-item .label {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.info-item .value {
+    font-weight: 500;
+}
+
+.info-item .value.active {
+    color: var(--success-color);
+}
+
+.info-item .value.locked {
+    color: var(--danger-color);
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.add-card-grid-item {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: 2px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    transition: all 0.3s ease;
+}
+
+.add-card-grid-item:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(var(--primary-rgb), 0.05);
+}
+
+.add-card-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.add-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.add-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.add-card-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.add-card-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* Card Usage Section */
+.card-usage-section {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h3 {
+    margin: 0;
+}
+
+.card-usage-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.usage-chart {
+    height: 300px;
+}
+
+.usage-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stat-item {
+    margin-bottom: 1.5rem;
+}
+
+.stat-item h4 {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.card-name, .category-name, .limit-used {
+    font-weight: 500;
+}
+
+.card-usage, .category-usage, .limit-total {
+    color: var(--text-muted);
+}
+
+.stat-progress {
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-right: 0.5rem;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+.progress-text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Transactions Table */
+.transactions-table-container {
+    overflow-x: auto;
+}
+
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+}

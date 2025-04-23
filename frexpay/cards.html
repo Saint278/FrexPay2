@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartlarım - FrexPay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/cards.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Sidebar içeriği dashboard.html ile aynı -->
+            <div class="sidebar-header">
+                <img src="assets/images/logo.svg" alt="FrexPay Logo" class="sidebar-logo">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    <img src="assets/images/avatar.jpg" alt="User Avatar">
+                    <span class="status-indicator online"></span>
+                </div>
+                <div class="user-info">
+                    <h4>Merhaba, Ahmet</h4>
+                    <p>Premium Üye</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i>
+                            <span>Ana Sayfa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="transactions.html">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>İşlemler</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="cards.html">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Kartlarım</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="has-submenu">
+                            <i class="fas fa-wallet"></i>
+                            <span>Hesaplarım</span>
+                            <i class="fas fa-chevron-down submenu-icon"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">TL Hesabı</a></li>
+                            <li><a href="#">USD Hesabı</a></li>
+                            <li><a href="#">EUR Hesabı</a></li>
+                            <li><a href="#">Yeni Hesap Aç</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Ödemeler</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Bütçe Analizi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-gift"></i>
+                            <span>Kampanyalar</span>
+                            <span class="badge">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Ayarlar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="support.html">
+                            <i class="fas fa-headset"></i>
+                            <span>Destek</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn btn-outline btn-sm">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Çıkış Yap</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <!-- Header içeriği dashboard.html ile aynı -->
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="İşlem, kart veya hesap ara...">
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-light btn-sm">
+                        <i class="fas fa-plus"></i>
+                        <span>Yeni İşlem</span>
+                    </button>
+                    <div class="notifications">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </button>
+                        <!-- Notification dropdown içeriği dashboard.html ile aynı -->
+                    </div>
+                    <div class="language-selector">
+                        <button class="language-btn">
+                            <img src="assets/images/flags/tr.svg" alt="Türkçe">
+                            <span>TR</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <!-- Language dropdown içeriği dashboard.html ile aynı -->
+                    </div>
+                </div>
+            </header>
+
+            <!-- Cards Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Kartlarım</h1>
+                    <div class="page-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            <span>Yeni Kart Ekle</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cards Tabs -->
+                <div class="cards-tabs">
+                    <button class="tab-btn active" data-tab="physical">Fiziksel Kartlar</button>
+                    <button class="tab-btn" data-tab="virtual">Sanal Kartlar</button>
+                    <button class="tab-btn" data-tab="all">Tüm Kartlar</button>
+                </div>
+
+                <!-- Cards Summary -->
+                <div class="cards-summary">
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="summary-details">
+                            <h3>Toplam Kart</h3>
+                            <p class="summary-amount">4</p>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="summary-details">
+                            <h3>Toplam Harcama</h3>
+                            <p class="summary-amount">₺8,320.75</p>
+                            <span class="summary-period">Bu ay</span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="summary-details">
+                            <h3>Kalan Limit</h3>
+                            <p class="summary-amount">₺41,679.25</p>
+                            <span class="summary-period">Toplam: ₺50,000.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards Grid -->
+                <div class="cards-grid tab-content active" id="physical-cards">
+                    <div class="card-grid-item">
+                        <div class="credit-card premium">
+                            <div class="card-header">
+                                <div class="card-logo">
+                                    <img src="assets/images/logo-white.svg" alt="FrexPay">
+                                </div>
+                                <div class="card-type">
+                                    <img src="assets/images/visa-logo.svg" alt="Visa">
+                                </div>
+                            </div>
+                            <div class="card-number">
+                                <span>**** **** **** 5678</span>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-holder">
+                                    <span class="label">KART SAHİBİ</span>
+                                    <span class="value">AHMET YILMAZ</span>
+                                </div>
+                                <div class="card-expires">
+                                    <span class="label">SON KULLANIM</span>
+                                    <span class="value">05/25</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-details">
+                            <h3>Premium Visa Kart</h3>
+                            <div class="card-info">
+                                <div class="info-item">
+                                    <span class="label">Kart Durumu</span>
+                                    <span class="value active">Aktif</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Kart Limiti</span>
+                                    <span class="value">₺30,000.00</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Kullanılabilir Limit</span>
+                                    <span class="value">₺25,450.25</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Kilitle</span>
+                                </button>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Detaylar</span>
+                                </button>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Ayarlar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-grid-item">
+                        <div class="credit-card standard">
+                            <div class="card-header">
+                                <div class="card-logo">
+                                    <img src="assets/images/logo-white.svg" alt="FrexPay">
+                                </div>
+                                <div class="card-type">
+                                    <img src="assets/images/mastercard-logo.svg" alt="Mastercard">
+                                </div>
+                            </div>
+                            <div class="card-number">
+                                <span>**** **** **** 9012</span>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-holder">
+                                    <span class="label">KART SAHİBİ</span>
+                                    <span class="value">AHMET YILMAZ</span>
+                                </div>
+                                <div class="card-expires">
+                                    <span class="label">SON KULLANIM</span>
+                                    <span class="value">11/24</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-details">
+                            <h3>Standart Mastercard</h3>
+                            <div class="card-info">
+                                <div class="info-item">
+                                    <span class="label">Kart Durumu</span>
+                                    <span class="value active">Aktif</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Kart Limiti</span>
+                                    <span class="value">₺15,000.00</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Kullanılabilir Limit</span>
+                                    <span class="value">₺12,350.00</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Kilitle</span>
+                                </button>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Detaylar</span>
+                                </button>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Ayarlar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-card-grid-item">
+                        <div class="add-card-content">
+                            <div class="add-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3>Yeni Fiziksel Kart Ekle</h3>
+                            <p>Visa veya Mastercard seçenekleriyle yeni kart başvurusu yapın</p>
+                            <button class="btn btn-primary">Başvuru Yap</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards-grid tab-content" id="virtual-cards">
+                    <div class="card-grid-item">
+                        <div class="credit-card virtual">
+                            <div class="card-header">
+                                <div class="card-logo">
+                                    <img src="assets/images/logo-white.svg" alt="FrexPay">
+                                </div>
+                                <div class="card-type">
+                                    <img src="assets/images/mastercard-logo.svg" alt="Mastercard">
+                                </div>
+                            </div>
+                            <div class="card-number">
+                                <span>**** **** **** 1234</span>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-holder">
+                                    <span class="label">KART SAHİBİ</span>
+                                    <span class="value">AHMET YILMAZ</span>
+                                </div>
+                                <div class="card-expires">
+                                    <span class="label">SON KULLANIM</span>
+                                    <span class="value">08/24</span>
+                                </div>
+                            </div>
+                            <div class="virtual-badge">SANAL KART</div>
+                        </div>
+                        <div class="card-details">
+                            <h3>Alışveriş Sanal Kart</h3>
+                            <div class="card-info">
+                                <div class="info-item">
+                                    <span class="label">Kart Durumu</span>
+                                    <span class="value active">Aktif</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Kart Limiti</span>
+                                    <span class="value">₺5,000.00</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Kullanılabilir Limit</span>
+                                    <span class="value">₺3,879.00</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Kart Bilgileri</span>
+                                </button>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Kilitle</span>
+                                </button>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                    <span>Sil</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-grid-item">
+                        <div class="credit-card virtual">
+                            <div class="card-header">
+                                <div class="card-logo">
+                                    <img src="assets/images/logo-white.svg" alt="FrexPay">
+                                </div>
+                                <div class="card-type">
+                                    <img src="assets/images/visa-logo.svg" alt="Visa">
+                                </div>
+                            </div>
+                            <div class="card-number">
+                                <span>**** **** **** 3456</span>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-holder">
+                                    <span class="label">KART SAHİBİ</span>
+                                    <span class="value">AHMET YILMAZ</span>
+                                </div>
+                                <div class="card-expires">
+                                    <span class="label">SON KULLANIM</span>
+                                    <span class="value">03/25</span>
+                                </div>
+                            </div>
+                            <div class="virtual-badge">SANAL KART</div>
+                        </div>
+                        <div class="card-details">
+                            <h3>Online Abonelik Kartı</h3>
+                            <div class="card-info">
+                                <div class="info-item">
+                                    <span class="label">Kart Durumu</span>
+                                    <span class="value locked">Kilitli</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Kart Limiti</span>
+                                    <span class="value">₺1,000.00</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Kullanılabilir Limit</span>
+                                    <span class="value">₺0.00</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Kart Bilgileri</span>
+                                </button>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-unlock"></i>
+                                    <span>Kilidi Aç</span>
+                                </button>
+                                <button class="btn btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                    <span>Sil</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-card-grid-item">
+                        <div class="add-card-content">
+                            <div class="add-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <h3>Yeni Sanal Kart Oluştur</h3>
+                            <p>Güvenli online alışveriş için hemen sanal kart oluşturun</p>
+                            <button class="btn btn-primary">Kart Oluştur</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards-grid tab-content" id="all-cards">
+                    <!-- Tüm kartların birleşimi -->
+                </div>
+
+                <!-- Card Usage Section -->
+                <div class="card-usage-section">
+                    <div class="section-header">
+                        <h3>Kart Kullanım Analizi</h3>
+                        <div class="section-actions">
+                            <select class="form-select">
+                                <option>Son 30 Gün</option>
+                                <option>Son 90 Gün</option>
+                                <option>Bu Yıl</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-usage-content">
+                        <div class="usage-chart">
+                            <canvas id="cardUsageChart"></canvas>
+                        </div>
+                        <div class="usage-stats">
+                            <div class="stat-item">
+                                <h4>En Çok Kullanılan Kart</h4>
+                                <div class="stat-value">
+                                    <span class="card-name">Premium Visa Kart</span>
+                                    <span class="card-usage">₺4,550.25</span>
+                                </div>
+                                <div class="stat-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 55%;"></div>
+                                    </div>
+                                    <span class="progress-text">55%</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <h4>En Çok Harcama Yapılan Kategori</h4>
+                                <div class="stat-value">
+                                    <span class="category-name">Alışveriş</span>
+                                    <span class="category-usage">₺3,250.50</span>
+                                </div>
+                                <div class="stat-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 39%;"></div>
+                                    </div>
+                                    <span class="progress-text">39%</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Limit Kullanım Oranı</h4>
+                                <div class="stat-value">
+                                    <span class="limit-used">₺8,320.75</span>
+                                    <span class="limit-total">/ ₺50,000.00</span>
+                                </div>
+                                <div class="stat-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 17%;"></div>
+                                    </div>
+                                    <span class="progress-text">17%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Card Transactions -->
+                <div class="recent-transactions-section">
+                    <div class="section-header">
+                        <h3>Son Kart İşlemleri</h3>
+                        <a href="transactions.html" class="section-link">Tümünü Gör</a>
+                    </div>
+                    <div class="transactions-table-container">
+                        <table class="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Tarih</span>
+                                            <i class="fas fa-sort-down"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Kart</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Açıklama</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Kategori</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Tutar</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div class="th-content">
+                                            <span>Durum</span>
+                                            <i class="fas fa-sort"></i>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">25 May 2023</span>
+                                            <span class="time">14:30</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-card">
+                                            <span class="card-type visa">Visa</span>
+                                            <span class="card-number">*5678</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Teknosa</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge electronics">Elektronik</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺1,250.00
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">24 May 2023</span>
+                                            <span class="time">12:15</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-card">
+                                            <span class="card-type mastercard">Mastercard</span>
+                                            <span class="card-number">*9012</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Migros</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge shopping">Alışveriş</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺345.75
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">23 May 2023</span>
+                                            <span class="time">20:45</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-card">
+                                            <span class="card-type visa">Visa</span>
+                                            <span class="card-number">*5678</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Cinemaximum</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge entertainment">Eğlence</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺120.00
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">22 May 2023</span>
+                                            <span class="time">13:20</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-card">
+                                            <span class="card-type virtual">Sanal</span>
+                                            <span class="card-number">*1234</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Netflix</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge entertainment">Eğlence</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺69.90
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="transaction-date">
+                                            <span class="date">21 May 2023</span>
+                                            <span class="time">09:30</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-card">
+                                            <span class="card-type mastercard">Mastercard</span>
+                                            <span class="card-number">*9012</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-description">
+                                            <span>Starbucks</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-category">
+                                            <span class="category-badge food">Yiyecek</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-amount outgoing">
+                                            -₺45.00
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="transaction-status">
+                                            <span class="status-badge completed">Tamamlandı</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Card Security Tips -->
+                <div class="card-security-section">
+                    <div class="section-header">
+                        <h3>Kart Güvenlik İpuçları</h3>
+                    </div>
+                    <div class="security-tips">
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="tip-content">
+                                <h4>Kart Bilgilerinizi Koruyun</h4>
+                                <p>Kart numaranızı, son kullanma tarihinizi ve güvenlik kodunuzu asla paylaşmayın. Bankalar bu bilgileri telefonla veya e-posta ile istemez.</p>
+                            </div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="tip-content">
+                                <h4>İşlem Bildirimlerini Açın</h4>
+                                <p>Kartınızla yapılan her işlem için anlık bildirim alarak, yetkisiz işlemleri hemen fark edebilirsiniz.</p>
+                            </div>
+                        </div>
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="tip-content">
+                                <h4>Kullanmadığınız Kartları Kilitleyin</h4>
+                                <p>Aktif olarak kullanmadığınız kartları uygulama üzerinden geçici olarak kilitleyerek güvenliğinizi artırabilirsiniz.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Footer -->
+            <footer class="dashboard-footer">
+                <div class="footer-links">
+                    <a href="#">Hakkımızda</a>
+                    <a href="#">Gizlilik Politikası</a>
+                    <a href="#">Kullanım Koşulları</a>
+                    <a href="#">Yardım Merkezi</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2023 FrexPay. Tüm hakları saklıdır.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cards.js"></script>
+    <script>
+        // Kart Kullanım Grafiği
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('cardUsageChart').getContext('2d');
+            const cardUsageChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Premium Visa', 'Standart Mastercard', 'Alışveriş Sanal Kart', 'Online Abonelik Kartı'],
+                    datasets: [{
+                        label: 'Kart Kullanımı (₺)',
+                        data: [4550.25, 2350.50, 1121.00, 299.00],
+                        backgroundColor: [
+                            '#6C5CE7',
+                            '#00B894',
+                            '#FD79A8',
+                            '#FDCB6E'
+                        ],
+                        borderWidth: 0,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                display: true,
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+        // Tab Switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    // Show corresponding content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId + '-cards').classList.add('active');
+                });
+            });
+        });
+
+                // Sidebar Toggle
+                document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+            document.querySelector('.dashboard-main').classList.toggle('expanded');
+        });
+
+        // Submenu Toggle
+        document.querySelectorAll('.has-submenu').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                item.classList.toggle('active');
+                const submenu = item.nextElementSibling;
+                if (submenu && submenu.classList.contains('submenu')) {
+                    if (submenu.style.maxHeight) {
+                        submenu.style.maxHeight = null;
+                    } else {
+                        submenu.style.maxHeight = submenu.scrollHeight + "px";
+                    }
+                }
+            });
+        });
+
+        // Bildirim Dropdown Açma/Kapama
+        document.querySelector('.notification-btn').addEventListener('click', function() {
+            document.querySelector('.notification-dropdown').classList.toggle('show');
+        });
+
+        // Dil Seçimi Dropdown Açma/Kapama
+        document.querySelector('.language-btn').addEventListener('click', function() {
+            document.querySelector('.language-dropdown').classList.toggle('show');
+        });
+
+        // Döküman dışı tıklamalarda dropdown'ları kapat
+        document.addEventListener('click', function(event) {
+            const notificationDropdown = document.querySelector('.notification-dropdown');
+            const notificationBtn = document.querySelector('.notification-btn');
+            const languageDropdown = document.querySelector('.language-dropdown');
+            const languageBtn = document.querySelector('.language-btn');
+
+            if (!notificationBtn.contains(event.target) && !notificationDropdown.contains(event.target)) {
+                notificationDropdown.classList.remove('show');
+            }
+
+            if (!languageBtn.contains(event.target) && !languageDropdown.contains(event.target)) {
+                languageDropdown.classList.remove('show');
+            }
+        });
+
+        // Kart Detayları Görüntüleme
+        document.querySelectorAll('.btn-eye').forEach(button => {
+            button.addEventListener('click', function() {
+                // Kart detayları modalını göster
+                // Bu kısım gerçek uygulamada modal açma işlemi yapacak
+                alert('Kart detayları görüntüleme işlemi');
+            });
+        });
+
+        // Kart Kilitleme/Kilit Açma
+        document.querySelectorAll('.btn-lock, .btn-unlock').forEach(button => {
+            button.addEventListener('click', function() {
+                const cardItem = this.closest('.card-grid-item');
+                const statusElement = cardItem.querySelector('.info-item .value');
+                
+                if (this.querySelector('i').classList.contains('fa-lock')) {
+                    // Kartı kilitle
+                    statusElement.textContent = 'Kilitli';
+                    statusElement.classList.remove('active');
+                    statusElement.classList.add('locked');
+                    this.innerHTML = '<i class="fas fa-unlock"></i><span>Kilidi Aç</span>';
+                } else {
+                    // Kartın kilidini aç
+                    statusElement.textContent = 'Aktif';
+                    statusElement.classList.remove('locked');
+                    statusElement.classList.add('active');
+                    this.innerHTML = '<i class="fas fa-lock"></i><span>Kilitle</span>';
+                }
+            });
+        });
+
+        // Sanal Kart Silme
+        document.querySelectorAll('.btn-trash').forEach(button => {
+            button.addEventListener('click', function() {
+                if (confirm('Bu sanal kartı silmek istediğinizden emin misiniz?')) {
+                    // Kartı sil
+                    const cardItem = this.closest('.card-grid-item');
+                    cardItem.style.opacity = '0';
+                    setTimeout(() => {
+                        cardItem.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+
+        // Yeni Kart Ekleme
+        document.querySelector('.btn-primary').addEventListener('click', function() {
+            // Yeni kart ekleme modalını göster
+            // Bu kısım gerçek uygulamada modal açma işlemi yapacak
+            alert('Yeni kart ekleme işlemi');
+        });
+
+        // Tablo Sıralama
+        document.querySelectorAll('.th-content').forEach(header => {
+            header.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                
+                // Tüm sıralama ikonlarını sıfırla
+                document.querySelectorAll('.th-content i').forEach(i => {
+                    i.className = 'fas fa-sort';
+                });
+                
+                // Tıklanan başlığın sıralama ikonunu güncelle
+                if (icon.classList.contains('fa-sort')) {
+                    icon.className = 'fas fa-sort-up';
+                } else if (icon.classList.contains('fa-sort-up')) {
+                    icon.className = 'fas fa-sort-down';
+                } else {
+                    icon.className = 'fas fa-sort-up';
+                }
+                
+                // Burada gerçek sıralama işlemi yapılacak
+                // Örnek olarak sadece ikon değişimi gösterildi
+            });
+        });
+    </script>
+</body>
+</html>
+
+
